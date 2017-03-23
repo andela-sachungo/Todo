@@ -1,0 +1,20 @@
+.add-form {
+  //
+}
+
+.todo-list {
+  list-style: none;
+
+  span {
+    margin-left: 10px;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+  }
+}
+
+.todo-label {
+  input {
+    margin-right: 10px;
+  }
+}
