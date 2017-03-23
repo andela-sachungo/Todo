@@ -85,11 +85,16 @@ class TodoController extends Controller
         ]);
     }
 
+    /**
+     * Remove the specified resource permanently from database.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function delete($id)
     {
         $todo = Todo::onlyTrashed()->where('id', $id)->firstOrFail();
         $todo->forceDelete();
-        //DB::table('users')->where('votes', '>', 100)->delete();
         return response()->json([
             'permanently_deleted' =>  $todo,
             'id' => $id
